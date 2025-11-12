@@ -1,0 +1,152 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom right, maroon, black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: background 1.5s ease-in-out;
+}
+
+/* Weather Content */
+.weather_container {
+  text-align: center;
+  z-index: 2;
+  animation: fadeIn 2s ease;
+}
+
+.temp {
+  font-size: 4.5rem;
+  font-weight: bold;
+  animation: floatTemp 3s ease-in-out infinite;
+}
+
+.time_location {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.condition {
+  margin-top: 0.3rem;
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+/* Navigation Bar */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+nav form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search_area {
+  outline: none;
+  border: none;
+  color: white;
+  background-color: transparent;
+  font-size: 1rem;
+  border-bottom: 2px solid white;
+  width: 200px;
+  padding: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.search_area:focus {
+  width: 250px;
+  border-color: #ffd700;
+}
+
+nav form button {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: maroon;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+nav form button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 15px;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  z-index: 3;
+  animation: fadeIn 2s ease 1s forwards;
+}
+
+footer span {
+  color: #ffd700;
+  font-weight: 600;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Weather-based Backgrounds */
+.container.sunny {
+  background: linear-gradient(to top, #ff9a00, #ff3c00);
+}
+
+.container.cloudy {
+  background: linear-gradient(to bottom, #757f9a, #d7dde8);
+}
+
+.container.rainy {
+  background: linear-gradient(to bottom, #1e3c72, #2a5298);
+}
+
+.container.mist {
+  background: linear-gradient(to bottom, #606c88, #3f4c6b);
+}
+
+.container.clear {
+  background: linear-gradient(to top, #56ccf2, #2f80ed);
+}
+
+/* 🔥 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ffd700; }
+  to { text-shadow: 0 0 25px #ffe666, 0 0 50px #ffd700; }
+}
+
+@keyframes floatTemp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

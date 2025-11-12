@@ -3,42 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="title" content="Weather App | Aavesh Siddiqui">
-<meta name="description" content="A simple and accurate weather app built using HTML, CSS, and JavaScript by Aavesh Siddiqui. Check live weather updates instantly!">
-<meta name="keywords" content="Weather App, JavaScript, Aavesh Siddiqui, Live Weather, HTML, CSS">
-<meta name="author" content="Aavesh Siddiqui">
-<meta name="robots" content="index, follow">
-
   <title>Weather App</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="container">
-
-    <nav>
-      <form>
-        <input type="text" placeholder="Search for a location" class="search_area" />
-        <button type="submit">Search</button>
-      </form>
-    </nav>
-
-    <div class="weather_container">
-      <div class="temp"><p>--°C</p></div>
-      <div class="time_location">
-        <p>City Name</p>
-        <span>--:-- - Day YYYY-MM-DD</span>
-      </div>
-      <div class="condition">
-        <p>Condition</p>
-      </div>
-    </div>
-
-    <footer>☁️ Created by <span>Avesh</span></footer>
+  <!-- Animated Background -->
+  <div class="weather-animation" id="weatherAnimation">
+    <div class="sun"></div>
+    <div class="cloud"></div>
+    <div class="rain"></div>
   </div>
+
+  <div class="container">
+    <div class="weather-card">
+      <h1 class="app-title">🌍 Weather Forecast</h1>
+
+      <div class="weather_container">
+        <div class="temp">
+          <p id="temperature">--°C</p>
+        </div>
+        <div class="time_location">
+          <p id="location">--</p>
+          <p id="datetime">--:--</p>
+        </div>
+        <div class="condition">
+          <p id="condition">--</p>
+        </div>
+      </div>
+
+      <nav>
+        <form id="searchForm">
+          <input type="text" placeholder="Search for a location" class="search_area" id="searchInput" />
+          <button type="submit">Search</button>
+        </form>
+      </nav>
+    </div>
+  </div>
+
+  <footer>
+    Created  by <span>Avesh 🌤️</span>
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
